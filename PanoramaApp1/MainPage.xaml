@@ -69,8 +69,8 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="second item"
-									Style="{StaticResource PanoramaItemHeaderTextStyle}"
-									Grid.Row="0"/>
+                                    Style="{StaticResource PanoramaItemHeaderTextStyle}"
+                                    Grid.Row="0"/>
                             </Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ListHeaderTemplate>
@@ -158,4 +158,17 @@
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
 
     </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
+
+            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="save" Click="Button1_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="get default size value" Click="MenuItem1_Click" />
+                <shell:ApplicationBarMenuItem Text="get mini size value" Click="MenuItem2_Click" />
+            </shell:ApplicationBar.MenuItems>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

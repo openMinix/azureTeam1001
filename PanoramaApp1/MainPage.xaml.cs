@@ -19,6 +19,8 @@ using Microsoft.Phone.Maps.Services;
 using PanoramaApp1.Resources;
 using Microsoft.Phone.Tasks;
 
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 namespace PanoramaApp1
 {
@@ -42,6 +44,8 @@ namespace PanoramaApp1
     }
     public partial class MainPage : PhoneApplicationPage
     {
+        CameraCaptureTask cameraCaptureTask;
+
         // MobileServiceCollectionView implements ICollectionView (useful for databinding to lists) and 
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
         private MobileServiceCollection<EventItem, EventItem> items;
@@ -52,8 +56,22 @@ namespace PanoramaApp1
         {
             InitializeComponent();
 
+            cameraCaptureTask = new CameraCaptureTask();
+            cameraCaptureTask.Completed += new EventHandler<PhotoResult>(cameraCaptureTask_Completed);
+
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+        }
+
+        void cameraCaptureTask_Completed(object sender, PhotoResult e) {
+            if (e.TaskResult == TaskResult.OK) {
+                MessageBox.Show(e.ChosenPhoto.Length.ToString());
+
+                //Code to display the photo on the page in an image control named myImage.
+                //System.Windows.Media.Imaging.BitmapImage bmp = new System.Windows.Media.Imaging.BitmapImage();
+                //bmp.SetSource(e.ChosenPhoto);
+                //myImage.Source = bmp;
+            }
         }
 
          private async void InsertEventItem(EventItem eventItem)
@@ -131,8 +149,34 @@ namespace PanoramaApp1
             GetCurrentCoordinate();
         }
 
+        #region button stuff
 
+        private void OpenCamera(object sender, RoutedEventArgs e) {
+            String option = ((RadioButton)sender).Name;
+            switch (option) {
+                case "ForeNormal":
+                    ApplicationBar.ForegroundColor = (Color)Resources["PhoneForegroundColor"];
+                    break;
 
+                case "ForeAccent":
+                    ApplicationBar.ForegroundColor = (Color)Resources["PhoneAccentColor"];
+                    break;
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e) {
+            cameraCaptureTask.Show();
+        }
+
+        private void MenuItem1_Click(object sender, EventArgs e) {
+            MessageBox.Show("The default Application Bar size is " + ApplicationBar.DefaultSize + " pixels.");
+        }
+
+        private void MenuItem2_Click(object sender, EventArgs e) {
+            MessageBox.Show("The mini Application Bar size is " + ApplicationBar.MiniSize + " pixels.");
+        }
+
+        #endregion
 
         #region mapCode
 
