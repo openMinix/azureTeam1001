@@ -185,8 +185,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EventItemController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="Controllers\UserItemController.cs" />
+    <Compile Include="DataObjects\EventItem.cs" />
+    <Compile Include="DataObjects\PhotoItem.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
+    <Compile Include="DataObjects\UserItem.cs" />
     <Compile Include="Models\Azurathon3Context.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">

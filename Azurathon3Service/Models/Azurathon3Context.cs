@@ -26,6 +26,7 @@ namespace Azurathon3Service.Models
         } 
 
         public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<EventItem> EventItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +40,8 @@ namespace Azurathon3Service.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+        public System.Data.Entity.DbSet<Azurathon3Service.DataObjects.UserItem> UserItems { get; set; }
     }
 
 }
