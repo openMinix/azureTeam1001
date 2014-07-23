@@ -95,8 +95,6 @@ namespace PanoramaApp1
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
 
-            TodoItem item = new TodoItem { Text = "Awesome item", Complete = false };
-            App.MobileService.GetTable<TodoItem>().InsertAsync(item);
             // Ensure that application state is restored appropriately
             if (!App.ViewModel.IsDataLoaded)
             {
