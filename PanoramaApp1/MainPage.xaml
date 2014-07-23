@@ -38,13 +38,13 @@
          -->
 
         <!--Panorama control-->
-        <phone:Panorama Title="my application">
+        <phone:Panorama Title="Lifebox">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource="/PanoramaApp1;component/Assets/PanoramaBackground.png"/>
             </phone:Panorama.Background>
 
             <!--Panorama item one-->
-            <phone:PanoramaItem Header="first item">
+            <phone:PanoramaItem Header="Near you">
                 <!--Single line list with text wrapping-->
                 <phone:LongListSelector Margin="0,0,-22,0" ItemsSource="{Binding Items}">
                     <phone:LongListSelector.ItemTemplate>
@@ -68,7 +68,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="second item"
+                                <TextBlock Text="Featured"
 									Style="{StaticResource PanoramaItemHeaderTextStyle}"
 									Grid.Row="0"/>
                             </Grid>
@@ -90,7 +90,7 @@
             </phone:PanoramaItem>
 
             <!--Panorama item three-->
-            <phone:PanoramaItem Header="third item" Orientation="Horizontal">
+            <phone:PanoramaItem Header="Recent photos" Orientation="Horizontal">
                 <!--Double wide Panorama with large image placeholders-->
                 <Grid>
                     <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
