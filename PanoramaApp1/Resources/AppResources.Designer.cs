@@ -112,5 +112,27 @@ namespace PanoramaApp1.Resources
                 return ResourceManager.GetString("SampleProperty", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to getting location....
+        /// </summary>
+        public static string GettingLocationProgressText
+        {
+            get
+            {
+                return ResourceManager.GetString("GettingLocationProgressText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Current location cannot be obtained. Check that location service is turned on in phone settings..
+        /// </summary>
+        public static string LocationDisabledMessageBoxText
+        {
+            get
+            {
+                return ResourceManager.GetString("LocationDisabledMessageBoxText", resourceCulture);
+            }
+        }
     }
 }
