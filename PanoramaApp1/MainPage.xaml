@@ -38,13 +38,13 @@
          -->
 
         <!--Panorama control-->
-        <phone:Panorama Title="my application">
+        <phone:Panorama Title="Angle">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource="/PanoramaApp1;component/Assets/PanoramaBackground.png"/>
             </phone:Panorama.Background>
 
             <!--Panorama item one-->
-            <phone:PanoramaItem Header="first item">
+            <phone:PanoramaItem Header="Near you">
                 <!--Single line list with text wrapping-->
                 <phone:LongListSelector Margin="0,0,-22,0" ItemsSource="{Binding Items}">
                     <phone:LongListSelector.ItemTemplate>
@@ -68,9 +68,11 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="second item"
-                                    Style="{StaticResource PanoramaItemHeaderTextStyle}"
-                                    Grid.Row="0"/>
+
+                                <TextBlock Text="Featured"
+									Style="{StaticResource PanoramaItemHeaderTextStyle}"
+									Grid.Row="0"/>
+
                             </Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ListHeaderTemplate>
@@ -89,31 +91,10 @@
                 </phone:LongListSelector>
             </phone:PanoramaItem>
 
-            <!--Panorama item three-->
-            <phone:PanoramaItem Header="third item" Orientation="Horizontal">
-                <!--Double wide Panorama with large image placeholders-->
-                <Grid>
-                    <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
-                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
-            </phone:PanoramaItem>
-
-            <phone:PanoramaItem Header="fourth item">
+            <phone:PanoramaItem Header="Event viewer">
                 <maps:Map x:Name="MyMap" Loaded="MyMap_Loaded" HorizontalAlignment="Left" Margin="7,-105,0,0" VerticalAlignment="Top" Height="564" Width="395" RenderTransformOrigin="0.5,0.5"/>
             </phone:PanoramaItem>
-            
+
             <phone:PanoramaItem Header="Add event">
 
                 <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -137,7 +118,7 @@
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                     
+
                                 </StackPanel>
                             </DataTemplate>
                         </phone:LongListSelector.ItemTemplate>
@@ -146,6 +127,29 @@
 
 
             </phone:PanoramaItem>
+
+            <!--Panorama item three-->
+            <phone:PanoramaItem Header="Recent photos" Orientation="Horizontal">
+                <!--Double wide Panorama with large image placeholders-->
+                <Grid>
+                    <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </phone:PanoramaItem>
+  
+          
 
         </phone:Panorama>
 

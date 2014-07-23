@@ -30,7 +30,7 @@ namespace PanoramaApp1
 {
     public class EventItem
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
@@ -82,6 +82,9 @@ namespace PanoramaApp1
         {
             // This code inserts a new TodoItem into the database. When the operation completes
             // and Mobile Services has assigned an Id, the item is added to the CollectionView
+            
+            eventItem.Location = 1;
+            eventItem.user = 2;
             await eventTable.InsertAsync(eventItem);
             items.Add(eventItem);
         }
