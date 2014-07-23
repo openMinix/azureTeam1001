@@ -17,6 +17,7 @@ using Microsoft.Phone.Maps.Controls;
 using Windows.Devices.Geolocation;
 using Microsoft.Phone.Maps.Services;
 using PanoramaApp1.Resources;
+using Microsoft.Phone.Tasks;
 
 
 namespace PanoramaApp1
