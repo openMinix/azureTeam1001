@@ -18,6 +18,11 @@ using Windows.Devices.Geolocation;
 using Microsoft.Phone.Maps.Services;
 using PanoramaApp1.Resources;
 
+using PanoramaApp1.ViewModels;
+
+using Microsoft.Phone.Tasks;
+
+
 
 namespace PanoramaApp1
 {
@@ -114,6 +119,8 @@ namespace PanoramaApp1
             }
         }
 
+        #region mapCode
+
         /// <summary>
         /// We must satisfy Maps API's Terms and Conditions by specifying
         /// the required Application ID and Authentication Token.
@@ -129,15 +136,14 @@ namespace PanoramaApp1
             Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "__ApplicationID__";
             Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "__AuthenticationToken__";
 
+            foreach(GeoCoordinate coord in MapTester.CreateRandomGeoCoordinates())
+            {
+                MyCoordinates.Add(coord);
+            }
+
             //MyMap.CartographicMode = MapCartographicMode.Aerial;
             GetCurrentCoordinate();
         }
-
-
-
-
-        #region mapCode
-
 
         /// <summary>
         /// Helper method to draw a single marker on top of the map.
