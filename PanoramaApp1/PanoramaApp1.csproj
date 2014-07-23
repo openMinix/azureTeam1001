@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MapTester.cs" />
     <Compile Include="ViewModels\TodoItem.cs" />
   </ItemGroup>
   <ItemGroup>
