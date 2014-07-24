@@ -70,8 +70,8 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock Text="Featured"
-									Style="{StaticResource PanoramaItemHeaderTextStyle}"
-									Grid.Row="0"/>
+                                    Style="{StaticResource PanoramaItemHeaderTextStyle}"
+                                    Grid.Row="0"/>
 
                             </Grid>
                         </DataTemplate>
@@ -165,14 +165,9 @@
 
     <!--Panorama-based applications should not show an ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" Opacity="1.0" >
 
-            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="save" Click="Button1_Click" />
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="get default size value" Click="MenuItem1_Click" />
-                <shell:ApplicationBarMenuItem Text="get mini size value" Click="MenuItem2_Click" />
-            </shell:ApplicationBar.MenuItems>
-
+            <shell:ApplicationBarIconButton IconUri="/Images/check.png" Text="Photo" Click="Button1_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
